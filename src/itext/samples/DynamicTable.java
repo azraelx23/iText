@@ -1,4 +1,4 @@
-package itext.sample2;
+package itext.samples;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

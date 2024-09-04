@@ -1,4 +1,4 @@
-package itext.sample1;
+package itext.mike;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,8 +13,8 @@ import com.itextpdf.text.pdf.PdfStamper;
 
 public class ChangeText {
 	
-	public static final String SRC = "G:\\PDF-001.pdf";
-    public static final String DEST = "G:\\PDF-001-changed-v1.pdf";
+	public static final String SRC = "sample-pdf/input/mike-pdf-ori.pdf";
+    public static final String DEST = "sample-pdf/output/mike-pdf-edited.pdf";
  
     public static void main(String[] args) throws IOException, DocumentException 
     {
@@ -34,10 +34,7 @@ public class ChangeText {
             PRStream stream = (PRStream)object;
             byte[] data = PdfReader.getStreamBytes(stream);
             String dd = new String(data);
-            dd = dd.replace("0123456789", "0121212121212");
-            dd = dd.replace("EEE:", "Our Ref:");
-            dd = dd.replace("WR", "IT TEST");
-            dd = dd.replace("2016", "2020");
+            dd = dd.replace("BUDI TANAKA", "BUTA HANDOKO");
             stream.setData(dd.getBytes());
         }
         
