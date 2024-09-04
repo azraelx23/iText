@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ChangeText",
+            "request": "launch",
+            "mainClass": "itext.sample1.ChangeText",
+            "projectName": "iText"
+        },
+        {
+            "type": "java",
+            "name": "ChangeTextV2",
+            "request": "launch",
+            "mainClass": "itext.sample1.ChangeTextV2",
+            "projectName": "iText"
+        },
+        {
+            "type": "java",
+            "name": "DynamicTable",
+            "request": "launch",
+            "mainClass": "itext.sample2.DynamicTable",
+            "projectName": "iText"
+        }
+    ]
+}
