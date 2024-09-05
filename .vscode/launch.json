@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListUsedFonts",
+            "request": "launch",
+            "mainClass": "itext.mike.ListUsedFonts",
+            "projectName": "iText"
+        },
+        {
+            "type": "java",
             "name": "ChangeTextV2",
             "request": "launch",
             "mainClass": "itext.mike.ChangeTextV2",
