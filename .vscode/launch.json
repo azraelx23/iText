@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ChangeTextV2",
+            "request": "launch",
+            "mainClass": "itext.mike.ChangeTextV2",
+            "projectName": "iText"
+        },
+        {
+            "type": "java",
             "name": "ChangeText",
             "request": "launch",
             "mainClass": "itext.mike.ChangeText",
