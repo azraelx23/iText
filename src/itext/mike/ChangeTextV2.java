@@ -26,14 +26,16 @@ import com.itextpdf.text.pdf.pdfcleanup.PdfCleanUpLocation;
 import com.itextpdf.text.pdf.pdfcleanup.PdfCleanUpProcessor;
 
 public class ChangeTextV2 {
-	public static final String SRC = "sample-pdf/input/mike-pdf-ori.pdf";
-    public static final String DEST = "sample-pdf/output/mike-pdf-edited-v2.pdf";
+	private static final String SRC = "sample-pdf/input/mike-pdf-ori.pdf";
+    private static final String DEST = "sample-pdf/output/mike-pdf-edited-v2.pdf";
+	private static final Rectangle EXTRACT_TEXT_RECTANGLE = new Rectangle(50f,550f,500f,445f);
+	private static final Rectangle STAMPER_RECTANGLE = new Rectangle(50f,550f,500f,445f);
+	private static final Font FONT_NORMAL = new Font(FontFamily.HELVETICA, 11, Font.NORMAL, BaseColor.BLACK);
 
 	public static void main(String[] args) throws IOException, DocumentException 
 	{
 		
-		Rectangle rect = new Rectangle(50f,550f,500f,445f);
-		RenderFilter[] filter = {new RegionTextRenderFilter(rect)};
+		RenderFilter[] filter = {new RegionTextRenderFilter(EXTRACT_TEXT_RECTANGLE)};
 		TextExtractionStrategy strategy;
 		StringBuilder sb = new StringBuilder();
 		PdfReader reader = new PdfReader(SRC);
@@ -54,15 +56,13 @@ public class ChangeTextV2 {
 		
 		PdfReader reader = new PdfReader(src);
 	    PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
-	    Font fontNormal = new Font(FontFamily.HELVETICA, 11, Font.NORMAL, BaseColor.BLACK);
-	    Rectangle rect = new Rectangle(50f,550f,500f,445f);
 	    List<PdfCleanUpLocation> cleanUpLocations = new ArrayList<PdfCleanUpLocation>();
-	    cleanUpLocations.add(new PdfCleanUpLocation(1, rect, BaseColor.WHITE));
+	    cleanUpLocations.add(new PdfCleanUpLocation(1, STAMPER_RECTANGLE, BaseColor.WHITE));
 	    
 	    PdfContentByte cb = stamper.getOverContent(1);
 		ColumnText ct = new ColumnText(cb);
 		ct.setSimpleColumn(140f, 490f, 500f, 445f);
-		Paragraph pz = new Paragraph(new Phrase(0,"HERE IS THE DYNAMIC TEXT", fontNormal));
+		Paragraph pz = new Paragraph(new Phrase(0,"HERE IS THE DYNAMIC TEXT", FONT_NORMAL));
 		ct.addElement(pz);
 		ct.go();
 	    
