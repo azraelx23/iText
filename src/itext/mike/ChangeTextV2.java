@@ -25,11 +25,31 @@ import com.itextpdf.text.pdf.parser.TextExtractionStrategy;
 import com.itextpdf.text.pdf.pdfcleanup.PdfCleanUpLocation;
 import com.itextpdf.text.pdf.pdfcleanup.PdfCleanUpProcessor;
 
+// https://www.javadoc.io/static/com.itextpdf/itextpdf/5.5.9/index.html?overview-summary.html
 public class ChangeTextV2 {
 	private static final String SRC = "sample-pdf/input/mike-pdf-ori.pdf";
     private static final String DEST = "sample-pdf/output/mike-pdf-edited-v2.pdf";
 	private static final Rectangle EXTRACT_TEXT_RECTANGLE = new Rectangle(50f,550f,500f,445f);
 	private static final Rectangle STAMPER_RECTANGLE = new Rectangle(50f,550f,500f,445f);
+
+	/* 
+	https://www.javadoc.io/static/com.itextpdf/itextpdf/5.5.9/index.html?overview-summary.html
+	COURIER 
+	HELVETICA 
+	SYMBOL 
+	TIMES_ROMAN 
+	UNDEFINED 
+	ZAPFDINGBATS 
+
+	static int	BOLD
+	static int	BOLDITALIC
+	static int	DEFAULTSIZE
+	static int	ITALIC
+	static int	NORMAL
+	static int	STRIKETHRU
+	static int	UNDEFINED
+	static int	UNDERLINE
+	*/ 
 	private static final Font FONT_NORMAL = new Font(FontFamily.HELVETICA, 11, Font.NORMAL, BaseColor.BLACK);
 
 	public static void main(String[] args) throws IOException, DocumentException 
